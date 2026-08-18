@@ -743,6 +743,219 @@
         "img/pestanas/ANI-11_4.jpg"
       ],
       "destacado": true
+    },
+    {
+      "id": "p0878",
+      "nombre": "Pestaña Tecnológica Flat 20D",
+      "referencia": "FLAT20D",
+      "precio": 26900,
+      "categoria": "Pestañas",
+      "subcategoria": "Tecnológicas",
+      "descripcion": "Pestaña tecnológica en abanico, curvatura D.",
+      "imagen": "img/pestanas/FLAT20D.webp",
+      "agotado": false,
+      "destacado": true
+    },
+    {
+      "id": "p0879",
+      "nombre": "Pestaña Tecnológica Flat 15D",
+      "referencia": "PF15D",
+      "precio": 26900,
+      "categoria": "Pestañas",
+      "subcategoria": "Tecnológicas",
+      "descripcion": "Pestaña tecnológica en abanico, 15 mm.",
+      "imagen": "img/pestanas/PF15D - FLAT 15 mm.png",
+      "agotado": false,
+      "destacado": true
+    },
+    {
+      "id": "p0880",
+      "nombre": "Pincel Cepillo PIN3053",
+      "referencia": "PIN3053",
+      "precio": 2500,
+      "categoria": "Accesorios",
+      "subcategoria": "Brochas, pinceles y accesorios",
+      "descripcion": "Pincel cepillo de uso general.",
+      "imagen": "img/accesorios/PIN3053.png",
+      "agotado": false,
+      "destacado": true
+    },
+    {
+      "id": "p0881",
+      "nombre": "Pincel PINCEP3056",
+      "referencia": "PINCEP3056",
+      "precio": 2500,
+      "categoria": "Accesorios",
+      "subcategoria": "Brochas, pinceles y accesorios",
+      "descripcion": "Pincel de uso general.",
+      "imagen": "img/accesorios/PINCEP3056.png",
+      "agotado": false,
+      "destacado": true
+    },
+    {
+      "id": "p0882",
+      "nombre": "Raspacallo RP-50",
+      "referencia": "RP-50",
+      "precio": 5500,
+      "categoria": "Accesorios",
+      "subcategoria": "Herramientas y accesorios",
+      "descripcion": "Raspacallo para cuidado de pies.",
+      "imagen": "img/accesorios/RP-50_1.png",
+      "agotado": false,
+      "destacado": true,
+      "colores": [
+        "img/accesorios/RP-50_1.png",
+        "img/accesorios/RP-50_2.png",
+        "img/accesorios/RP-50_3.png"
+      ]
+    },
+    {
+      "id": "p0883",
+      "nombre": "Cepillo Pulidor CEPUL1",
+      "referencia": "CEPUL1",
+      "precio": 2900,
+      "categoria": "Accesorios",
+      "subcategoria": "Cepillos y peinillas",
+      "descripcion": "Cepillo pulidor.",
+      "imagen": "img/accesorios/CEPUL1.jpg",
+      "agotado": false,
+      "destacado": true
+    },
+    {
+      "id": "p0884",
+      "nombre": "Pestañas Pelo a Pelo P7D 13 mm",
+      "referencia": "P7D13MM",
+      "precio": 6900,
+      "categoria": "Pestañas",
+      "subcategoria": "Pestañas pelo a pelo",
+      "descripcion": "Pestañas pelo a pelo, curvatura D, 13 mm.",
+      "imagen": "img/pestanas/P7D13MM.png",
+      "agotado": false,
+      "destacado": true
+    },
+    {
+      "id": "p0885",
+      "nombre": "Tijeras de Colores Mini TJ824",
+      "referencia": "TJ824",
+      "precio": 4900,
+      "categoria": "Accesorios",
+      "subcategoria": "Herramientas y accesorios",
+      "descripcion": "Tijeras mini de colores.",
+      "imagen": "img/accesorios/TJ824.png",
+      "agotado": false,
+      "destacado": true
+    },
+    {
+      "id": "p0886",
+      "nombre": "Espejo con Luz ESP3170",
+      "referencia": "ESP3170",
+      "precio": 20000,
+      "categoria": "Accesorios",
+      "subcategoria": "Espejos",
+      "descripcion": "Espejo con luz LED.",
+      "imagen": "img/accesorios/ESP3170.png",
+      "agotado": false,
+      "destacado": true
+    },
+    {
+      "id": "p0887",
+      "nombre": "Limpiador de Brochas LBR04",
+      "referencia": "LBR04",
+      "precio": 6000,
+      "categoria": "Accesorios",
+      "subcategoria": "Brochas, pinceles y accesorios",
+      "descripcion": "Limpiador de brochas.",
+      "imagen": "img/accesorios/LBR04.jpg",
+      "agotado": false,
+      "destacado": true
+    },
+    {
+      "id": "p0888",
+      "nombre": "Tijeras TJ810",
+      "referencia": "TJ810",
+      "precio": 4500,
+      "categoria": "Accesorios",
+      "subcategoria": "Herramientas y accesorios",
+      "descripcion": "Tijeras de uso general.",
+      "imagen": "img/accesorios/TJ810.png",
+      "agotado": false,
+      "destacado": true
+    },
+    {
+      "id": "p0889",
+      "nombre": "Brocha BRO3247",
+      "referencia": "BRO3247",
+      "precio": 7100,
+      "categoria": "Accesorios",
+      "subcategoria": "Brochas, pinceles y accesorios",
+      "descripcion": "Brocha de uso general.",
+      "imagen": "img/accesorios/BRO3247.jpg",
+      "agotado": false,
+      "destacado": true
+    },
+    {
+      "id": "p0890",
+      "nombre": "Punzón Liner PUNDLINER",
+      "referencia": "PUNDLINER",
+      "precio": 9900,
+      "categoria": "Uñas",
+      "subcategoria": "Accesorios para uñas",
+      "descripcion": "Punzón liner para uñas.",
+      "imagen": "img/unas/PUNDLINER.webp",
+      "agotado": false,
+      "destacado": true
+    },
+    {
+      "id": "p0891",
+      "nombre": "Pestañas Pelo a Pelo P7D 8 mm",
+      "referencia": "P7D8MM",
+      "precio": 9900,
+      "categoria": "Pestañas",
+      "subcategoria": "Pestañas pelo a pelo",
+      "descripcion": "Pestañas pelo a pelo, curvatura D, 8 mm.",
+      "imagen": "img/pestanas/P7D8MM.png",
+      "agotado": false,
+      "destacado": true,
+      "colores": [
+        "img/pestanas/P7D8MM.png",
+        "img/pestanas/P7D8MM_2.png"
+      ]
+    },
+    {
+      "id": "p0892",
+      "nombre": "Cepillo CEP3130",
+      "referencia": "CEP3130",
+      "precio": 15000,
+      "categoria": "Accesorios",
+      "subcategoria": "Cepillos y peinillas",
+      "descripcion": "Cepillo para el cabello.",
+      "imagen": "img/accesorios/CEP3130.png",
+      "agotado": false,
+      "destacado": true
+    },
+    {
+      "id": "p0893",
+      "nombre": "Cortacutícula STAR",
+      "referencia": "STAR",
+      "precio": 60000,
+      "categoria": "Uñas",
+      "subcategoria": "Accesorios para uñas",
+      "descripcion": "Cortacutícula profesional.",
+      "imagen": "img/unas/STAR 1.webp",
+      "agotado": false,
+      "destacado": true
+    },
+    {
+      "id": "p0894",
+      "nombre": "Brocha para Pestañas BROS3270",
+      "referencia": "BROS3270",
+      "precio": 12000,
+      "categoria": "Pestañas",
+      "subcategoria": "Accesorios de pestañas",
+      "descripcion": "Brocha para pestañas.",
+      "imagen": "img/pestanas/BROS3270.jpg",
+      "agotado": false,
+      "destacado": true
     }
   ]
 }
