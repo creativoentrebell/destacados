@@ -29,22 +29,39 @@
     html { scroll-behavior: smooth; }
     body {
       font-family: var(--font-sans);
-      background: var(--du-white);
+      background: #f3f9fd;
       color: var(--du-dark);
       min-height: 100vh;
     }
+
+    /* ─── CINTA "DESTACADOS" (identidad visual del catálogo reducido) ─── */
+    .destacados-ribbon {
+      background: linear-gradient(135deg, var(--du-blue) 0%, var(--du-blue-dk) 100%);
+      color: var(--du-dark);
+      text-align: center;
+      padding: 7px 16px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+    }
+    .destacados-ribbon svg { width: 13px; height: 13px; flex-shrink: 0; }
 
     /* ─── HEADER ─────────────────────────────────────── */
     .site-header {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: var(--du-white);
-      border-bottom: 1px solid var(--du-border);
+      background: #eaf6fd;
+      border-bottom: 2px solid var(--du-blue-dk);
       transition: border-color 0.3s;
     }
     .site-header.mode-mayor {
-      border-bottom-color: var(--du-blue-dk);
+      border-bottom-color: var(--du-dark);
     }
     .header-inner {
       max-width: 1280px;
@@ -547,8 +564,8 @@
 
     /* ─── HERO ───────────────────────────────────────── */
     .hero {
-      background: linear-gradient(135deg, #e8f4fd 0%, var(--du-white) 60%);
-      border-bottom: 1px solid var(--du-border);
+      background: linear-gradient(135deg, var(--du-blue) 0%, #eaf6fd 55%, var(--du-white) 100%);
+      border-bottom: 2px solid var(--du-blue-dk);
       padding: 40px 24px 36px;
     }
     .hero-inner { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; gap: 32px; }
@@ -741,6 +758,7 @@
       .header-tagline { display: none; }
       .header-divider { display: none; }
       .cat-btn { padding: 14px 14px; font-size: 11px; }
+      .destacados-ribbon { font-size: 9.5px; padding: 6px 10px; letter-spacing: 0.08em; }
     }
     @media (max-width: 480px) {
       .mode-btn { padding: 8px 11px; font-size: 9px; letter-spacing: 0.1em; }
@@ -1047,6 +1065,12 @@
   </style>
 </head>
 <body>
+
+<!-- ─── CINTA DESTACADOS ─── -->
+<div class="destacados-ribbon">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.9 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.3 5.5 21.2l1.8-7.3-5.7-4.9 7.5-.6z"/></svg>
+  Selección Destacados del mes
+</div>
 
 <!-- ─── HEADER ─── -->
 <header class="site-header" id="siteHeader">
