@@ -521,7 +521,7 @@
       "subcategoria": "Cepillos y peinillas",
       "descripcion": "Cepillo pulidor.",
       "imagen": "img/accesorios/CEPUL-05 1.webp",
-      "agotado": false,
+      "agotado": true,
       "destacado": true
     },
     {
