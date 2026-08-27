@@ -444,9 +444,13 @@
       "categoria": "Accesorios",
       "subcategoria": "Brochas, pinceles y accesorios",
       "descripcion": "Brocha/pincel Colección Vainilla PD14.",
-      "imagen": "img/accesorios/PD14.webp",
+      "imagen": "img/accesorios/PD14_1.JPG",
       "agotado": false,
-      "destacado": true
+      "destacado": true,
+      "colores": [
+        "img/accesorios/PD14_1.JPG",
+        "img/accesorios/PD14_2.webp"
+      ]
     },
     {
       "id": "p0492",
@@ -989,9 +993,13 @@
       "categoria": "Accesorios",
       "subcategoria": "Brochas, pinceles y accesorios",
       "descripcion": "Brocha/pincel vainilla.",
-      "imagen": "img/accesorios/PD1.jpeg",
+      "imagen": "img/accesorios/PD1_1.png",
       "agotado": false,
-      "destacado": true
+      "destacado": true,
+      "colores": [
+        "img/accesorios/PD1_1.png",
+        "img/accesorios/PD1_2.png"
+      ]
     },
     {
       "id": "p0898",
@@ -1001,9 +1009,13 @@
       "categoria": "Accesorios",
       "subcategoria": "Brochas, pinceles y accesorios",
       "descripcion": "Brocha/pincel vainilla.",
-      "imagen": "img/accesorios/PD2.jpeg",
+      "imagen": "img/accesorios/PD2_1.png",
       "agotado": false,
-      "destacado": true
+      "destacado": true,
+      "colores": [
+        "img/accesorios/PD2_1.png",
+        "img/accesorios/PD2_2.png"
+      ]
     },
     {
       "id": "p0899",
@@ -1013,9 +1025,13 @@
       "categoria": "Accesorios",
       "subcategoria": "Brochas, pinceles y accesorios",
       "descripcion": "Brocha/pincel vainilla.",
-      "imagen": "img/accesorios/PD4.jpeg",
+      "imagen": "img/accesorios/PD4_1.png",
       "agotado": false,
-      "destacado": true
+      "destacado": true,
+      "colores": [
+        "img/accesorios/PD4_1.png",
+        "img/accesorios/PD4_2.png"
+      ]
     },
     {
       "id": "p0900",
@@ -1025,9 +1041,13 @@
       "categoria": "Accesorios",
       "subcategoria": "Brochas, pinceles y accesorios",
       "descripcion": "Brocha/pincel vainilla.",
-      "imagen": "img/accesorios/PD5.jpeg",
+      "imagen": "img/accesorios/PD5_1.png",
       "agotado": false,
-      "destacado": true
+      "destacado": true,
+      "colores": [
+        "img/accesorios/PD5_1.png",
+        "img/accesorios/PD5_2.png"
+      ]
     },
     {
       "id": "p0901",
