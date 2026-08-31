@@ -1114,12 +1114,16 @@
       "nombre": "Set de Pinceles SPIN3216",
       "referencia": "SPIN3216",
       "precio": 30000,
-      "categoria": "Pestañas",
-      "subcategoria": "Accesorios de pestañas",
-      "descripcion": "Set de pinzas para pestañas.",
-      "imagen": "img/pestanas/SPIN3216.jpeg",
+      "categoria": "Accesorios",
+      "subcategoria": "Brochas, pinceles y accesorios",
+      "descripcion": "Set de pinceles SPIN3216.",
+      "imagen": "img/accesorios/SPIN3216_1.jpeg",
       "agotado": false,
-      "destacado": true
+      "destacado": true,
+      "colores": [
+        "img/accesorios/SPIN3216_1.jpeg",
+        "img/accesorios/SPIN3216_2.jpeg"
+      ]
     }
   ]
 }
