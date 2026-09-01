@@ -2394,8 +2394,8 @@ function enviarADestino(numero) {
 async function init() {
   try {
     const [resD, resM] = await Promise.all([
-      fetch("du_productos.json"),
-      fetch("du_productos_mayorista.json")
+      fetch("destacados_productos.json"),
+      fetch("destacados_productos_mayorista.json")
     ]);
     const dataD = await resD.json();
     const dataM = await resM.json();
