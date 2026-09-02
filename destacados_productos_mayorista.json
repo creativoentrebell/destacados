@@ -805,7 +805,7 @@
       "subcategoria": "Herramientas y accesorios",
       "descripcion": "Raspacallo para cuidado de pies.",
       "imagen": "img/accesorios/RP-50_1.png",
-      "agotado": false,
+      "agotado": true,
       "destacado": true,
       "colores": [
         "img/accesorios/RP-50_1.png",
@@ -822,7 +822,7 @@
       "subcategoria": "Cepillos y peinillas",
       "descripcion": "Cepillo pulidor.",
       "imagen": "img/accesorios/CEPUL1.jpg",
-      "agotado": false,
+      "agotado": true,
       "destacado": true
     },
     {
