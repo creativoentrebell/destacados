@@ -3,16 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DU — Destacados 2026</title>
+  <title>DU — Elección de Aniversario 2026</title>
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400;1,700&display=swap" rel="stylesheet" />
   <style>
     /* ─── TOKENS ─────────────────────────────────────── */
     :root {
-      --du-blue:    #a6d8f2;
-      --du-blue-dk: #7cb8d9;
+      /* Aniversario DU — dorado champán + oro rosa
+         (se conservan los nombres --du-blue* para no tocar el resto del CSS) */
+      --du-blue:    #e2c39a;   /* champán claro  (antes azul claro)  */
+      --du-blue-dk: #9c7440;   /* dorado oscuro  (antes azul oscuro) */
+      --du-gold:      #c19653;
+      --du-gold-lt:   #e2c39a;
+      --du-gold-dk:   #9c7440;
+      --du-rose:      #c98f7d;
+      --du-rose-lt:   #e8b9a8;
+      --du-cream:     #fffcf8;
+      --du-cream-dp:  #faf1e8;
+      --du-gold-line: #ecdccb;
       --du-gray:    #ACADAF;
       --du-dark:    #2e2e2e;
       --du-white:   #ffffff;
@@ -30,15 +40,34 @@
     html { scroll-behavior: smooth; }
     body {
       font-family: var(--font-sans);
-      background: #f3f9fd;
+      background: var(--du-cream-dp);
       color: var(--du-dark);
       min-height: 100vh;
     }
 
-    /* ─── CINTA "DESTACADOS" (identidad visual del catálogo reducido) ─── */
+    /* ─── TORNASOL: degradado ancho recortado al texto, en loop ─── */
+    .tornasol {
+      background-image: linear-gradient(100deg,
+        #9c7440 0%, #c19653 14%, #d9b184 26%, #e0bfa4 34%,
+        #dfa895 44%, #c98f7d 54%, #d9b184 66%, #c19653 80%, #9c7440 100%);
+      background-size: 300% 100%;
+      background-position: 0% 50%;
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
+      animation: tornasol 7s linear infinite;
+    }
+    @keyframes tornasol {
+      0%   { background-position:   0% 50%; }
+      100% { background-position: 300% 50%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .tornasol { animation: none; background-position: 42% 50%; }
+    }
+
+    /* ─── CINTA ANIVERSARIO ─── */
     .destacados-ribbon {
-      background: linear-gradient(135deg, var(--du-blue) 0%, var(--du-blue-dk) 100%);
-      color: var(--du-dark);
+      background: var(--du-dark);
+      color: var(--du-gold-lt);
       text-align: center;
       padding: 7px 16px;
       font-size: 11px;
@@ -50,14 +79,14 @@
       justify-content: center;
       gap: 7px;
     }
-    .destacados-ribbon svg { width: 13px; height: 13px; flex-shrink: 0; }
+    .destacados-ribbon svg { width: 13px; height: 13px; flex-shrink: 0; color: var(--du-gold); }
 
     /* ─── HEADER ─────────────────────────────────────── */
     .site-header {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: #eaf6fd;
+      background: var(--du-cream);
       border-bottom: 2px solid var(--du-blue-dk);
       transition: border-color 0.3s;
     }
@@ -369,8 +398,9 @@
 
     /* ─── CARD ───────────────────────────────────────── */
     .product-card {
-      background: var(--du-white);
-      border: 1px solid var(--du-border);
+      position: relative;
+      background: #fffdfa;
+      border: 1px solid var(--du-gold-line);
       border-radius: var(--radius);
       overflow: hidden;
       transition: box-shadow 0.2s, transform 0.2s;
@@ -378,7 +408,18 @@
       display: flex;
       flex-direction: column;
     }
-    .product-card:hover { box-shadow: var(--du-shadow); transform: translateY(-2px); }
+    .product-card:hover { box-shadow: 0 6px 20px -6px rgba(138,108,24,0.22); transform: translateY(-2px); }
+    /* filo tornasol en el borde superior de cada tarjeta */
+    .product-card::after {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--du-rose) 0%, var(--du-gold) 38%, var(--du-gold-lt) 62%, var(--du-rose) 100%);
+      opacity: 0.9;
+      transition: opacity 0.2s;
+      z-index: 15;
+      pointer-events: none;
+    }
+    .product-card:hover::after { opacity: 1; }
 
     .card-img-wrap {
       position: relative;
@@ -386,7 +427,7 @@
       background: #ffffff;
       overflow: hidden;
     }
-    .card-img-wrap.no-img { background: linear-gradient(145deg, #e8f4fd 0%, #d0eaf8 50%, #c2e2f5 100%); }
+    .card-img-wrap.no-img { background: linear-gradient(145deg, #fdf6ea 0%, #f7e9d6 50%, #f0dcc6 100%); }
     .card-img-wrap img { width: 100%; height: 100%; object-fit: contain; padding: 12px; display: block; position: relative; z-index: 2; }
     .card-placeholder {
       position: absolute;
@@ -405,7 +446,7 @@
       width: 44px;
       height: 44px;
       border-radius: 50%;
-      background: rgba(166,216,242,0.35);
+      background: rgba(226,195,154,0.4);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -489,8 +530,8 @@
     .price-pending { font-size: 12px; color: var(--du-gray); font-style: italic; font-weight: 400; }
     .price-volumen { font-size: 10px; color: var(--du-gray); letter-spacing: 0.02em; }
     .card-cat-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-    .cat-pestanas { background: #c4e8fb; }
-    .cat-unas     { background: #c4e8fb; opacity: 0.6; }
+    .cat-pestanas { background: var(--du-gold-lt); }
+    .cat-unas     { background: var(--du-rose-lt); }
     .cat-accesorios { background: var(--du-blue); }
 
     /* ─── PRODUCT DETAIL MODAL ──────────────────────── */
@@ -535,7 +576,7 @@
     .prod-modal-img.no-img { display: none; }
     .prod-modal-no-img {
       width: 100%; height: 120px;
-      background: linear-gradient(145deg,#e8f4fd,#d0eaf8);
+      background: linear-gradient(145deg,#fdf6ea,#f7e9d6);
       display: flex; align-items: center; justify-content: center;
       border-bottom: 1px solid var(--du-border);
     }
@@ -600,19 +641,19 @@
 
     /* ─── HERO ───────────────────────────────────────── */
     .hero {
-      background: linear-gradient(135deg, var(--du-blue) 0%, #eaf6fd 55%, var(--du-white) 100%);
-      border-bottom: 2px solid var(--du-blue-dk);
+      background: linear-gradient(135deg, var(--du-gold-lt) 0%, var(--du-cream-dp) 48%, var(--du-white) 100%);
+      border-bottom: 1px solid var(--du-gold-line);
       padding: 40px 24px 36px;
     }
     .hero-inner { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; gap: 32px; }
     .hero-text { flex: 1; }
     .hero-eyebrow { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--du-blue-dk); margin-bottom: 10px; }
     .hero-title { font-family: var(--font-serif); font-size: clamp(24px, 3.2vw, 36px); font-weight: 300; color: var(--du-dark); line-height: 1.2; margin-bottom: 12px; }
-    .hero-title em { font-style: italic; color: var(--du-blue-dk); }
-    .hero-sub { font-size: 13px; color: var(--du-gray); max-width: 480px; line-height: 1.6; }
+    .hero-title em { font-style: italic; font-weight: 700; }
+    .hero-sub { font-size: 13px; color: var(--du-dark); max-width: 480px; line-height: 1.6; }
     .hero-accent { flex-shrink: 0; display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
     .hero-edition { font-family: var(--font-serif); font-size: 13px; font-weight: 400; font-style: italic; color: var(--du-gray); }
-    .hero-bar { width: 48px; height: 2px; background: var(--du-blue); }
+    .hero-bar { width: 48px; height: 2px; background: linear-gradient(90deg, var(--du-rose), var(--du-gold)); }
 
     /* ─── FOOTER ─────────────────────────────────────── */
     .site-footer { background: var(--du-dark); padding: 32px 24px; text-align: center; }
@@ -1146,10 +1187,10 @@
 </head>
 <body>
 
-<!-- ─── CINTA DESTACADOS ─── -->
+<!-- ─── CINTA ANIVERSARIO ─── -->
 <div class="destacados-ribbon">
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.9 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.3 5.5 21.2l1.8-7.3-5.7-4.9 7.5-.6z"/></svg>
-  Selección Destacados del mes
+  DU · <span class="tornasol">Aniversario 2026</span>
 </div>
 
 <!-- ─── HEADER ─── -->
@@ -1160,7 +1201,7 @@
       <span class="header-logo-text" style="display:none">DU</span>
     </a>
     <div class="header-divider"></div>
-    <span class="header-tagline">Destacados 2026</span>
+    <span class="header-tagline">Aniversario 2026</span>
 
     <!-- Modo toggle -->
     <div class="mode-toggle">
@@ -1212,9 +1253,9 @@
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-text">
-      <p class="hero-eyebrow">Selección del mes · Colombia</p>
-      <h1 class="hero-title">Lo más pedido, <em>en un solo lugar</em>.</h1>
-      <p class="hero-sub">Nuestra selección de productos destacados este mes. Arma tu pedido y envíalo directo por WhatsApp a tu asesora DU. Precios en COP.</p>
+      <p class="hero-eyebrow">Aniversario DU · Colombia</p>
+      <h1 class="hero-title">Elección de <em class="tornasol">Aniversario</em>.</h1>
+      <p class="hero-sub">Nuestra selección de aniversario. Arma tu pedido y envíalo directo por WhatsApp a tu asesora DU. Precios en COP.</p>
     </div>
     <div class="hero-accent">
       <span class="hero-edition">2026</span>
@@ -1279,7 +1320,7 @@
   <div class="footer-inner">
     <div class="footer-brand">DU</div>
     <div class="footer-social">@DU_COLOMBIA &nbsp;·&nbsp; @DUCOLOMBIA &nbsp;·&nbsp; WWW.DUCOLOMBIA.COM</div>
-    <div class="footer-note" id="footerNote">Destacados 2026 — Solo de consulta. No incluye opciones de pedido.</div>
+    <div class="footer-note" id="footerNote">Aniversario 2026 — Solo de consulta. No incluye opciones de pedido.</div>
   </div>
 </footer>
 
@@ -1754,11 +1795,11 @@ function updateModeUI() {
   header.classList.toggle('mode-mayor', mode === 'mayorista');
 
   if (mode === 'mayorista') {
-    footerNote.textContent = 'Destacados 2026 — Precios mayoristas exclusivos. Arma tu pedido y envíalo por WhatsApp.';
+    footerNote.textContent = 'Aniversario 2026 — Precios mayoristas exclusivos. Arma tu pedido y envíalo por WhatsApp.';
   } else if (mode === 'detal') {
-    footerNote.textContent = 'Destacados 2026 — Precio detal. Arma tu pedido y envíalo por WhatsApp.';
+    footerNote.textContent = 'Aniversario 2026 — Precio detal. Arma tu pedido y envíalo por WhatsApp.';
   } else {
-    footerNote.textContent = 'Destacados 2026 — Navega, arma tu pedido y envíalo por WhatsApp.';
+    footerNote.textContent = 'Aniversario 2026 — Navega, arma tu pedido y envíalo por WhatsApp.';
   }
 
   // Refrescar carrito si está abierto (los precios dependen del modo)
