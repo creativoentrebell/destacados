@@ -988,6 +988,20 @@
     .add-cart-btn:hover { background: #444; }
     .add-cart-btn:disabled { background: var(--du-gray); cursor: not-allowed; opacity: 0.7; }
     .add-cart-btn svg { width: 17px; height: 17px; }
+    /* Aviso de inventario — solo visible en modo mayorista */
+    .aviso-stock {
+      display: none; align-items: flex-start; gap: 8px;
+      background: #fff6e0; border: 1px solid #f0c36d; border-left: 4px solid #e0a020;
+      color: #6b4a00; border-radius: 8px; padding: 10px 12px;
+      font-size: 12.5px; line-height: 1.45; text-align: left;
+    }
+    .aviso-stock svg { width: 16px; height: 16px; flex-shrink: 0; margin-top: 1px; color: #c98a00; }
+    .aviso-stock strong { color: #4d3500; }
+    body.modo-mayor .aviso-stock { display: flex; }
+    .hero .aviso-stock { margin-top: 10px; padding: 0; background: none; border: none; font-size: 12px; color: var(--du-gold-dk); align-items: center; gap: 6px; }
+    .hero .aviso-stock strong { color: inherit; font-weight: 600; }
+    .hero .aviso-stock svg { width: 13px; height: 13px; margin-top: 0; }
+    .cart-footer .aviso-stock { margin-bottom: 12px; }
     .opt-warning { font-size: 11.5px; color: #e05555; min-height: 15px; opacity: 0; transition: opacity 0.2s; }
     .opt-warning.visible { opacity: 1; }
 
@@ -1167,6 +1181,16 @@
     .cliente-field input:focus { border-color: var(--du-blue-dk); background: var(--du-white); }
     .cliente-field input.error { border-color: #e05555; }
     .cliente-field input::placeholder { color: var(--du-gray); }
+    .cliente-retenedor.oculto { display: none; }
+    .reten-opts { display: flex; gap: 8px; }
+    .reten-opt {
+      flex: 1; height: 44px; border: 1px solid var(--du-border); border-radius: 8px;
+      background: var(--du-off); font-family: var(--font-sans); font-size: 13.5px;
+      color: var(--du-dark); cursor: pointer; transition: border-color 0.15s, background 0.15s;
+    }
+    .reten-opt.activo { border-color: var(--du-dark); background: var(--du-dark); color: var(--du-white); font-weight: 600; }
+    .reten-opts.error .reten-opt { border-color: #e05555; }
+    .reten-help { font-size: 11px; color: var(--du-gray); line-height: 1.35; }
     .cliente-warning { font-size: 11.5px; color: #e05555; min-height: 15px; opacity: 0; transition: opacity 0.2s; }
     .cliente-warning.visible { opacity: 1; }
     .cliente-continue-btn {
@@ -1256,6 +1280,7 @@
       <p class="hero-eyebrow">Aniversario DU · Colombia</p>
       <h1 class="hero-title">Elección de <em class="tornasol">Aniversario</em>.</h1>
       <p class="hero-sub">Nuestra selección de aniversario. Arma tu pedido y envíalo directo por WhatsApp a tu asesora DU. Precios en COP.</p>
+      <div class="aviso-stock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><span><strong>Pendiente verificar unidades disponibles</strong> con tu asesora.</span></div>
     </div>
     <div class="hero-accent">
       <span class="hero-edition">2026</span>
@@ -1396,6 +1421,7 @@
             Agregar al pedido
           </button>
         </div>
+        <div class="aviso-stock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><span><strong>Pendiente verificar unidades disponibles</strong> con tu asesora.</span></div>
         <div class="opt-warning" id="optWarning">Selecciona una opción antes de agregar.</div>
       </div>
     </div>
@@ -1419,6 +1445,7 @@
       <span class="cart-total-label">Total</span>
       <span class="cart-total-val" id="cartTotalVal"></span>
     </div>
+    <div class="aviso-stock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><span><strong>Pendiente verificar unidades disponibles</strong> con tu asesora.</span></div>
     <button class="wa-btn" id="waBtn" onclick="abrirDatosCliente()">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35zM12.05 21.5h-.01a9.4 9.4 0 0 1-4.8-1.32l-.34-.2-3.57.94.95-3.48-.22-.36a9.4 9.4 0 0 1-1.44-5.01c0-5.2 4.23-9.42 9.44-9.42 2.52 0 4.89.98 6.67 2.77a9.36 9.36 0 0 1 2.76 6.66c0 5.2-4.23 9.42-9.43 9.42zm8.02-17.44A11.32 11.32 0 0 0 12.04.75C5.77.75.68 5.84.68 12.09c0 2 .52 3.95 1.51 5.67L.6 23.25l5.63-1.48a11.32 11.32 0 0 0 5.42 1.38h.01c6.26 0 11.35-5.09 11.36-11.34a11.28 11.28 0 0 0-3.32-8.02z"/></svg>
       Enviar pedido por WhatsApp
@@ -1462,6 +1489,14 @@
       <div class="cliente-field">
         <label class="opt-label" for="clienteTelefono">Teléfono de contacto<span class="req">*</span></label>
         <input type="tel" inputmode="tel" id="clienteTelefono" placeholder="Ej. 3001234567" autocomplete="off">
+      </div>
+      <div class="cliente-field cliente-retenedor oculto" id="clienteRetenedorField">
+        <span class="opt-label">¿Eres agente retenedor en la fuente?<span class="req">*</span></span>
+        <div class="reten-opts" id="retenOpts">
+          <button type="button" class="reten-opt" data-val="si" onclick="elegirRetenedor('si')">Sí</button>
+          <button type="button" class="reten-opt" data-val="no" onclick="elegirRetenedor('no')">No</button>
+        </div>
+        <span class="reten-help">Si eres retenedor, calculamos la retención en la fuente en tu cotización.</span>
       </div>
       <div class="cliente-warning" id="clienteWarning">Completa todos los campos para continuar.</div>
       <button class="cliente-continue-btn" onclick="continuarADestinos()">
@@ -1800,6 +1835,7 @@ function updateModeUI() {
   badge.classList.toggle('visible', mode !== 'sinprecios');
   badge.textContent = mode === 'mayorista' ? '· Mayorista' : '· Detal';
   header.classList.toggle('mode-mayor', mode === 'mayorista');
+  document.body.classList.toggle('modo-mayor', mode === 'mayorista');
 
   if (mode === 'mayorista') {
     footerNote.textContent = 'Aniversario 2026 — Precios mayoristas exclusivos. Arma tu pedido y envíalo por WhatsApp.';
@@ -2274,7 +2310,27 @@ function showToast(msg) {
 }
 
 /* Datos del cliente (se piden justo antes de enviar la cotización) */
-let clienteData = { cedula: '', nombre: '', direccion: '', ciudad: '', telefono: '' };
+let clienteData = { cedula: '', nombre: '', direccion: '', ciudad: '', telefono: '', retenedor: '' };
+
+/* ── Retención en la fuente (solo modo mayorista) ──
+   Si la DIAN cambia la tarifa o la base mínima, ajustar SOLO estas constantes. */
+const RETEFUENTE_TARIFA   = 0.025;   // 2,5 %
+const RETEFUENTE_BASE_MIN = 524000;  // base mínima (sin IVA) para aplicar retención
+const IVA_TARIFA          = 0.19;    // los precios mayoristas incluyen IVA del 19 %
+
+function elegirRetenedor(val) {
+  clienteData.retenedor = val;
+  document.querySelectorAll('#retenOpts .reten-opt').forEach(b => b.classList.toggle('activo', b.dataset.val === val));
+  document.getElementById('retenOpts').classList.remove('error');
+}
+
+/* Calcula base, retención y valor final a partir del total CON IVA (en pesos enteros) */
+function calcularRetencion(totalConIva) {
+  const base = Math.round(totalConIva / (1 + IVA_TARIFA));
+  const aplica = base >= RETEFUENTE_BASE_MIN;
+  const retencion = aplica ? Math.round(base * RETEFUENTE_TARIFA) : 0;
+  return { base, aplica, retencion, final: totalConIva - retencion };
+}
 
 function abrirDatosCliente() {
   if (cart.length === 0) return;
@@ -2283,6 +2339,8 @@ function abrirDatosCliente() {
   document.getElementById('clienteDireccion').value = clienteData.direccion;
   document.getElementById('clienteCiudad').value = clienteData.ciudad;
   document.getElementById('clienteTelefono').value = clienteData.telefono;
+  document.getElementById('clienteRetenedorField').classList.toggle('oculto', mode !== 'mayorista');
+  elegirRetenedor(clienteData.retenedor);
   document.getElementById('clienteWarning').classList.remove('visible');
   ['clienteCedula','clienteNombre','clienteDireccion','clienteCiudad','clienteTelefono'].forEach(id => {
     document.getElementById(id).classList.remove('error');
@@ -2310,6 +2368,10 @@ function continuarADestinos() {
     input.classList.toggle('error', vacio);
     if (vacio) faltan = true;
   });
+  if (mode === 'mayorista' && !clienteData.retenedor) {
+    document.getElementById('retenOpts').classList.add('error');
+    faltan = true;
+  }
   const warning = document.getElementById('clienteWarning');
   if (faltan) {
     warning.classList.add('visible');
@@ -2321,7 +2383,8 @@ function continuarADestinos() {
     nombre: campos.nombre.value.trim(),
     direccion: campos.direccion.value.trim(),
     ciudad: campos.ciudad.value.trim(),
-    telefono: campos.telefono.value.trim()
+    telefono: campos.telefono.value.trim(),
+    retenedor: clienteData.retenedor
   };
   cerrarDatosCliente();
   abrirDestinos();
@@ -2341,6 +2404,7 @@ function buildWhatsAppMessage() {
   L.push('• Dirección: ' + clienteData.direccion);
   L.push('• Ciudad: ' + clienteData.ciudad);
   L.push('• Teléfono: ' + clienteData.telefono);
+  if (mode === 'mayorista') L.push('• Agente retenedor: ' + (clienteData.retenedor === 'si' ? 'Sí' : 'No'));
   L.push('━━━━━━━━━━━━━━━━━━━');
   L.push('');
 
@@ -2367,10 +2431,31 @@ function buildWhatsAppMessage() {
   L.push('Productos: ' + cart.length + '  ·  Unidades: ' + unidades);
   if (conPrecios) {
     L.push('*TOTAL: $' + formatPrice(total) + '*' + (hayPendiente ? ' _(+ ítems a confirmar)_' : ''));
+    if (mode === 'mayorista' && clienteData.retenedor === 'si') {
+      L.push('');
+      if (hayPendiente) {
+        L.push('Retención en la fuente: _a calcular por la asesora (hay productos con precio a confirmar)_');
+      } else {
+        const r = calcularRetencion(total);
+        if (r.aplica) {
+          L.push('Base a aplicar retención: $' + formatPrice(r.base));
+          L.push('Retención en la fuente (' + String(RETEFUENTE_TARIFA * 100).replace('.', ',') + '%): $' + formatPrice(r.retencion));
+        } else {
+          L.push('Retención en la fuente: no aplica (base inferior a $' + formatPrice(RETEFUENTE_BASE_MIN) + ')');
+        }
+        L.push('━━━━━━━━━━━━━━━');
+        L.push('➤ *VALOR FINAL A PAGAR: $' + formatPrice(r.final) + '*');
+        L.push('━━━━━━━━━━━━━━━');
+      }
+    }
   } else {
     L.push('Precios a confirmar con la asesora.');
   }
   L.push('');
+  if (mode === 'mayorista') {
+    L.push('_*Pendiente verificar unidades disponibles.*_');
+    L.push('');
+  }
   L.push('_Enviado desde el catálogo DU_');
   return L.join('\n');
 }
@@ -2430,8 +2515,8 @@ function enviarADestino(numero) {
   if (cart.length === 0) return;
   const msg = buildWhatsAppMessage();
   const url = numero
-    ? 'https://wa.me/' + numero + '?text=' + encodeURIComponent(msg)
-    : 'https://wa.me/?text=' + encodeURIComponent(msg);
+    ? 'https://api.whatsapp.com/send?phone=' + numero + '&text=' + encodeURIComponent(msg)
+    : 'https://api.whatsapp.com/send?text=' + encodeURIComponent(msg);
   window.open(url, '_blank');
   cerrarDestinos();
 }
